@@ -2,11 +2,27 @@
 a{
     text-decoration: none;
 }
+.background{
+    background-image: url(star-background2.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.physics-background{
+    background-image: url(scifi-background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.wall-E-text-animated1{
+    color: rgb(192, 212, 228);
+
+}
 body{
-    background-color: #121317;
     margin: 0;
     margin-left: 1vw;
     margin-bottom: 50px;
+    height: 100vh;
 }
 .header-main{
     width: 99vw;
@@ -18,6 +34,7 @@ body{
 .header-text{
     margin: auto;
     padding: 20px;
+    color: rgb(238, 223, 223);
 }
 .main-image{
     width: 40vw;
@@ -25,10 +42,10 @@ body{
     border-radius: 50%;
 }
 .title-text{
-    color: aliceblue;
+    color: rgb(73, 132, 184);
 }
 .title-text-Description{
-    color: aliceblue;
+    color: rgb(29, 113, 185);
     place-items: left;
 }
 .PDF{
@@ -46,8 +63,8 @@ body{
 .MATH{
     width: 46vw;
     height: 15vh;
-    color: #112A46;
-    background-color: #ACC8E5;
+    color: #5d8ebee8;
+    background-color: #08081459;
     border-radius: 10px;
     backdrop-filter: blur(5px);
     display: grid;
@@ -72,7 +89,8 @@ body{
 .PHYSICS{
     width: 46vw;
     height: 15vh;
-    background-color: rgba(71, 22, 22, 0.096);
+    color: #042e5893;
+    background-color: rgba(20, 48, 100, 0.11);
     border-radius: 10px;
     backdrop-filter: blur(5px);
     display: grid;
@@ -93,7 +111,7 @@ body{
 }
 .PHYSICS-child{
     place-self: center;
-    color: rgb(250, 250, 250);
+    color: rgba(148, 135, 197, 0.705);
 }
 .links{
     color: rgb(0, 0, 0);
@@ -101,7 +119,7 @@ body{
 .PDF-items{
     width: 80vw;
     height: 15vh;
-    background-color: rgba(143, 27, 27, 0.096);
+    background-color: rgba(7, 4, 4, 0.096);
     display: grid;
     margin: auto;
     box-shadow: 0 0 5px rgb(218, 37, 5),
@@ -118,11 +136,11 @@ body{
     ;
 }
 .PDF-items-design{
-    background-color:  #f9006d;
+    background-color:  #0c0c0c7c;
     border-radius: 20px;
 }
 .PDF-items-design-2{
-    background-color:   #18f98f;
+    background-color:   #ffffff50;
     border-radius: 20px;
     color: #112A46;
     font-size: larger;
