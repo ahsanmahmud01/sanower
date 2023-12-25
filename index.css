@@ -1,0 +1,137 @@
+
+a{
+    text-decoration: none;
+}
+body{
+    background-color: #121317;
+    margin: 0;
+}
+.header-main{
+    width: 99vw;
+    display: grid;
+    place-items: left;
+    margin-left: 1vw;
+
+}
+.main-image{
+    width: 40vw;
+    height: auto;
+    border-radius: 50%;
+}
+.title-text{
+    color: aliceblue;
+}
+.title-text-Description{
+    color: aliceblue;
+    place-items: left;
+}
+.PDF{
+    color: rgb(25, 114, 192);
+    display: flex;
+    margin-top: 10vw;
+}
+.PDF-title{
+    color: rgb(36, 125, 184);
+    display: grid;
+    place-items: center;
+}
+.MATH{
+    width: 48vw;
+    height: 15vh;
+    background-color: #18f98f;
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+    display: grid;
+    margin: auto;
+    box-shadow: 0 0 5px cyan,
+    0 0 25px rgb(23, 172, 172)
+    ;
+    transition: 1s;
+}
+.MATH:hover{
+    box-shadow: 0 0 5px cyan,
+    0 0 10px cyan, 0 0 25px cyan,
+    0 0 50px cyan , 0 0 100px cyan
+    ;
+}
+.MATH-child{
+    place-self: center;
+    
+}
+.PHYSICS{
+    width: 46vw;
+    height: 15vh;
+    background-color: rgba(206, 47, 47, 0.096);
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+    display: grid;
+    margin: auto;
+    box-shadow: 0 0 5px cyan,
+    0 0 25px rgb(23, 172, 172)
+    ;
+    transition: 1s;
+}
+.PHYSICS:hover{
+    box-shadow: 0 0 5px cyan,
+    0 0 10px cyan, 0 0 25px cyan,
+    0 0 50px cyan , 0 0 100px cyan
+    ;
+}
+.PHYSICS-child{
+    place-self: center;
+    color: black;
+}
+.links{
+    color: rgb(0, 0, 0);
+}
+.PDF-items{
+    width: 80vw;
+    height: 15vh;
+    background-color: rgba(143, 27, 27, 0.096);
+    display: grid;
+    margin: auto;
+    box-shadow: 0 0 5px rgb(218, 37, 5),
+    0 0 25px rgb(241, 3, 3)
+    ;
+    border-radius: 20px;
+    transition: 1s;
+    margin-bottom: 30px;
+}
+.PDF-items:hover{
+    box-shadow: 0 0 5px  #FB016F,
+    0 0 10px  #FB016F, 0 0 25px  #FB016F,
+    0 0 50px  #FB016F , 0 0 100px  #FB016F
+    ;
+}
+.PDF-items-design{
+    background-color:  #f9006d;
+    border-radius: 20px;
+}
+.PDF-items-design-2{
+    background-color:   #18f98f;
+    border-radius: 20px;
+}
+.PDF-items-2{
+    width: 80vw;
+    height: 15vh;
+
+    display: grid;
+    margin: auto;
+    box-shadow: 0 0 5px cyan,
+    0 0 25px rgb(23, 172, 172)
+    ;
+    border-radius: 20px;
+    transition: 1s;
+    margin-bottom: 30px;
+}
+.PDF-items-2:hover{
+    box-shadow: 0 0 5px cyan,
+    0 0 10px cyan, 0 0 25px cyan,
+    0 0 50px cyan , 0 0 100px cyan
+    ;
+}
+.title-topic{
+    color: #ccbbbe;
+    font-style: normal;
+    font-size: 20px;
+}
