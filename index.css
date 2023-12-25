@@ -5,13 +5,19 @@ a{
 body{
     background-color: #121317;
     margin: 0;
+    margin-left: 1vw;
+    margin-bottom: 50px;
 }
 .header-main{
     width: 99vw;
-    display: grid;
+    display: flex;
     place-items: left;
     margin-left: 1vw;
 
+}
+.header-text{
+    margin: auto;
+    padding: 20px;
 }
 .main-image{
     width: 40vw;
@@ -28,7 +34,9 @@ body{
 .PDF{
     color: rgb(25, 114, 192);
     display: flex;
-    margin-top: 10vw;
+    margin-top: 10vw; 
+    margin-left: 2vw;
+    
 }
 .PDF-title{
     color: rgb(36, 125, 184);
@@ -36,17 +44,20 @@ body{
     place-items: center;
 }
 .MATH{
-    width: 48vw;
+    width: 46vw;
     height: 15vh;
-    background-color: #18f98f;
+    color: #112A46;
+    background-color: #ACC8E5;
     border-radius: 10px;
     backdrop-filter: blur(5px);
     display: grid;
-    margin: auto;
+    margin: 1vw;
     box-shadow: 0 0 5px cyan,
     0 0 25px rgb(23, 172, 172)
     ;
     transition: 1s;
+    font-weight: bold;
+    font-size: larger
 }
 .MATH:hover{
     box-shadow: 0 0 5px cyan,
@@ -61,15 +72,18 @@ body{
 .PHYSICS{
     width: 46vw;
     height: 15vh;
-    background-color: rgba(206, 47, 47, 0.096);
+    background-color: rgba(71, 22, 22, 0.096);
     border-radius: 10px;
     backdrop-filter: blur(5px);
     display: grid;
-    margin: auto;
+    margin: 1vw;
     box-shadow: 0 0 5px cyan,
     0 0 25px rgb(23, 172, 172)
     ;
     transition: 1s;
+    font-weight: bold;
+    font-size: larger
+    
 }
 .PHYSICS:hover{
     box-shadow: 0 0 5px cyan,
@@ -79,7 +93,7 @@ body{
 }
 .PHYSICS-child{
     place-self: center;
-    color: black;
+    color: rgb(250, 250, 250);
 }
 .links{
     color: rgb(0, 0, 0);
@@ -110,11 +124,13 @@ body{
 .PDF-items-design-2{
     background-color:   #18f98f;
     border-radius: 20px;
+    color: #112A46;
+    font-size: larger;
+    font-weight: bold;
 }
 .PDF-items-2{
     width: 80vw;
     height: 15vh;
-
     display: grid;
     margin: auto;
     box-shadow: 0 0 5px cyan,
@@ -123,6 +139,7 @@ body{
     border-radius: 20px;
     transition: 1s;
     margin-bottom: 30px;
+    
 }
 .PDF-items-2:hover{
     box-shadow: 0 0 5px cyan,
@@ -134,4 +151,19 @@ body{
     color: #ccbbbe;
     font-style: normal;
     font-size: 20px;
+}
+
+.wall-E{
+    height: 20vh;
+
+}
+.wall-E-title{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.wall-E-text{
+    color: aliceblue;
 }
