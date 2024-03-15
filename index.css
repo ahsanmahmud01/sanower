@@ -7,16 +7,14 @@ a{
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    height: 100vh;
+    height: 120vh;
 }
 .physics-background{
-    background-image: url(scifi-background.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+    background-color: #111;
+    background-position: fixed;
 }
 .wall-E-text-animated1{
-    color: rgb(192, 212, 228);
+    color: #27f7f7;
 
 }
 body{

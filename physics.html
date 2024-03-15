@@ -1,54 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="index.css">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <link rel="stylesheet" href="physics.css">
+  <style type="text/css">
+  body {
+    background-color: #011C2D;
+    color: #FFFFFF;
+    font-family:'Helvetica', sans-serif;
+  }
+  </style>
 </head>
-<body class="physics-background">
-    <div class="wall-E-title">
-        <img src="Wall-E-PNG-Photo.png" class="wall-E">
-        <p><span class="wall-E-text-animated1">I'm&nbsp; </span><span id="elementdes" class="wall-E-text-animated1"></span></p>
-    </div>
-    <h1 class="physics-title"></h1>
-    <div class="PDF-items">
-        <button type="button" onclick="location.href" class="PDF-items-design">
-            <span class="title-topic">VECTOR</span>
-        </button>
-    </div>
-    <div class="PDF-items-2">
-        <button type="button" onclick="location.href" class="PDF-items-design-2">
-            Dynamics
-        </button>
-    </div>
-    <div class="PDF-items">
-        <button type="button" onclick="location.href" class="PDF-items-design">
-            <span class="title-topic">VECTOR</span>
-        </button>
-    </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.js"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+<body>
+  <div id="container">
+    <div class="math label">math</div>
+    <div class="physics label">physics</div>
+  
+    <canvas id="drawing_canvas"></canvas>
+  </div>
+  
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/p2.js/0.6.0/p2.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/dat-gui/0.5/dat.gui.min.js"></script>
+  <script src="physics.js"></script>
 
-    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
-    <script>
+</body>
 
-        if(window.innerWidth<500){
-          var typed = new Typed('#elementdes', {
-          strings: ['WALL-E', 'What you are looking for is down there ', 'A Robot from the Future', 'Sorry I am collecting dump so can not help you', 'going to sleep now' ],
-          typeSpeed: 100,
-          backSpeed: 50,
-          loop: true,
-        });
-        }
-        else{
-          var typed = new Typed('#elementdes', {
-          strings: ['WALL-E', 'What you are looking for is down there ', 'A Robot from the Future','Sleeping ....'] ,
-          typeSpeed: 100,
-          backSpeed: 50,
-          loop: true,
-        });
-        }
-      </script>
 </html>
