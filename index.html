@@ -15,15 +15,29 @@
 
 </div>
 <div class="front-io">
-    <button class="btn-nav">
-        <h2>Physics</h2>
-        <h3>Physics related PDF are her<e/h3>
-    </button>
-    <button class="btn-nav">
-        <h2>Mathematics</h2>
-        <h3>Math related PDeF are hre</h3>
+    
+<button onclick="window.location.href='physics.html'" class="mouse-cursor-gradient-tracking"><span>
+    <h3>Physics</h3>
+    Physics related PDF are here
+</span></button>
 
-    </button>
+<button class="mouse-cursor-gradient-tracking"><span>
+    <h3>Mathematics</h3>
+    Math related PDF are here
+</span>
+</button>
+
+
+
+<script>
+    var btn = document.querySelector('.mouse-cursor-gradient-tracking')
+btn.onmousemove = function(e) {
+  var x = e.pageX - btn.offsetLeft - btn.offsetParent.offsetLeft
+  var y = e.pageY - btn.offsetTop - btn.offsetParent.offsetTop
+  btn.style.setProperty('--x', x + 'px')
+  btn.style.setProperty('--y', y + 'px')
+}
+</script>
 </div>
 </body>
 </html>
