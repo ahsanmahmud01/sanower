@@ -1,4 +1,3 @@
-// double pendulum math from https://github.com/micaeloliveira/physics-sandbox/blob/feature/new-styling/assets/javascripts/pendulum.js
 
 // canvas settings
 var viewWidth = window.innerWidth,
