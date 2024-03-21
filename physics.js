@@ -227,7 +227,7 @@ var dat = new dat.GUI();
 var settings = {
     length1:120,
     length2:120,
-    mass1:10,
+    mass1:15,
     mass2:10,
     mathTimeScale:5.6,
     apply:function() {
