@@ -52,8 +52,8 @@ canvas {
     line-height: 42px;
     padding: 15px;
     border: none;
-    background: rgb(253, 28, 3);
-    background: linear-gradient(0deg, rgba(255,27,0,1) 0%, rgba(251,75,2,1) 100%);
+    background: #78CCE2 ;
+    background: linear-gradient(0deg, #39B4D4 0%, #ff9f21 100%);
     margin: 20px;
 }
   .btn-B:hover {
