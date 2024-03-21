@@ -57,7 +57,7 @@ h1 span::before{
   outline: none;
   overflow: hidden;
   margin: auto;
-  border: 10px transparent;
+  border: 20px transparent;
   border-radius: 20px;
   
 }
