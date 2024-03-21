@@ -59,6 +59,7 @@ h1 span::before{
   margin: auto;
   border: 20px #0f0f0f;
   border-radius: 20px;
+  max-width: 40%;
   
 }
 
