@@ -258,6 +258,6 @@ dat.add(settings, 'length1', 10, 200);
 dat.add(settings, 'length2', 10, 200);
 dat.add(settings, 'mass1', 1, 50);
 dat.add(settings, 'mass2', 1, 50);
-dat.add(settings, 'mathTimeScale', 1, 10);
+dat.add(settings, 'mathTimeScale', 1, 100);
 dat.add(settings, 'apply');
 dat.close();
