@@ -5,7 +5,7 @@ body {
 
 #container {
     position: relative;
-    width: 100vq;
+    width: 100vw;
     height: 90vh;
     display: block;
 }
