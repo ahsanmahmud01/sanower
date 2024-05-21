@@ -1,12 +1,35 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="math.css">
 </head>
 <body>
-    <h1>Under development
-    </h1>
+  <h1> <span></span></h1>
+
+  <h1>Math</h1>
+
+  <H2>FIRST PAPER</H2>
+  <button onclick="window.location.href='link'" class="custom-btn btn-B"><span>
+    <h3>Chapter 02</h3> Vectors
+  </span></button>
+  
+  <h2>SECOUND PAPER</h2>
+  <button onclick="window.location.href='Thermodynamics-2.pdf'" class="custom-btn btn-B"><span>
+    <h3>Chapter 01</h3>Thermodynamics 
+  </span></button>
+
+  </span></button>
+
+  <script>
+    var btn = document.querySelector('.mouse-cursor-gradient-tracking')
+btn.onmousemove = function(e) {
+  var x = e.pageX - btn.offsetLeft - btn.offsetParent.offsetLeft
+  var y = e.pageY - btn.offsetTop - btn.offsetParent.offsetTop
+  btn.style.setProperty('--x', x + 'px')
+  btn.style.setProperty('--y', y + 'px')
+}
+</script>
 </body>
 </html>

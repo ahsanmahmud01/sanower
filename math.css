@@ -1,0 +1,85 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Boogaloo&family=Dhurjati&display=swap');
+.archivo-black-regular {
+  font-family: "Archivo Black", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+@import url('https://fonts.googleapis.com/css2?family=Truculenta:opsz,wght@12..72,100..900&display=swap');
+
+
+body{
+    font-family: "Archivo Black ";
+    background-color: #0f0f0f;
+    color: #AAD9FA;
+    margin: 0;
+    padding: 0;
+}
+.front-io{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+}
+.main-text{
+  font-family: "Truculenta", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  margin: auto;
+  text-align: center;
+  font-optical-sizing: auto;
+
+}
+h1 span::before{
+  content: '';
+  color: #76F5E8;
+  animation: profile 100s infinite;
+}
+@keyframes profile {
+    0% {content: 'Without the knowledge of uncertainity any kind of measurement is meaningless ';}
+    35% { content: 'Hola!'}
+    65% { content: 'こんにちは !'}
+    100% { content: 'مرحبًا'}
+}
+/*hover */
+
+.mouse-cursor-gradient-tracking {
+  position: relative;
+  background: #AAFAE9;
+  padding: 0.5rem ;
+  font-size: 1.2rem;
+  border: none;
+  color: rgb(43, 46, 1);
+  cursor: pointer;
+  outline: none;
+  overflow: hidden;
+  margin: auto;
+  border: 20px #0f0f0f;
+  border-radius: 20px;
+  max-width: 40%;
+  
+}
+
+.mouse-cursor-gradient-tracking span {
+  position: relative;
+}
+
+.mouse-cursor-gradient-tracking::before {
+  --size: 0;
+  content: '';
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  width: var(--size);
+  height: var(--size);
+  background: radial-gradient(circle closest-side, pink, transparent);
+  transform: translate(-50%, -50%);
+  transition: width 0.2s ease, height 0.2s ease;
+}
+
+.mouse-cursor-gradient-tracking:hover::before {
+  --size: 200px;
+}
