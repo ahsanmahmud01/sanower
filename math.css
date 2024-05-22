@@ -1,55 +1,60 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Boogaloo&family=Dhurjati&display=swap');
-.archivo-black-regular {
+
+body {
   font-family: "Archivo Black", sans-serif;
-  font-weight: 400;
-  font-style: normal;
+  background-color: #0f0f0f;
+  color: #aad9fa;
+  margin: 0;
+  padding: 0;
 }
-@import url('https://fonts.googleapis.com/css2?family=Truculenta:opsz,wght@12..72,100..900&display=swap');
 
-
-body{
-    font-family: "Archivo Black ";
-    background-color: #0f0f0f;
-    color: #AAD9FA;
-    margin: 0;
-    padding: 0;
+.front-io {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.front-io{
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 
-
-}
-.main-text{
+.main-text {
   font-family: "Truculenta", sans-serif;
   font-weight: 400;
   font-style: normal;
   margin: auto;
   text-align: center;
   font-optical-sizing: auto;
+}
 
+.quote-container {
+  text-align: center;
+  max-width: 95%;
+  margin: auto;
+  padding: 20px;
 }
-h1 span::before{
-  content: '';
-  color: #76F5E8;
-  animation: profile 100s infinite;
+
+.quote-head {
+  margin: 0;
+  font-size: 2vw;
 }
-@keyframes profile {
-    0% {content: 'Without the knowledge of uncertainity any kind of measurement is meaningless ';}
-    35% { content: 'Hola!'}
-    65% { content: 'こんにちは !'}
-    100% { content: 'مرحبًا'}
+
+.quote-head span {
+  display: inline-block;
+  overflow: hidden;
+  white-space: normal;
+  word-break: break-word;
+  transition: opacity 1s, font-size 0.5s;
 }
-/*hover */
+
+.fade-out {
+  opacity: 0;
+}
+
+/* Hover effect */
 
 .mouse-cursor-gradient-tracking {
   position: relative;
-  background: #AAFAE9;
-  padding: 0.5rem ;
+  background: #aafae9;
+  padding: 0.5rem;
   font-size: 1.2rem;
   border: none;
   color: rgb(43, 46, 1);
@@ -60,7 +65,6 @@ h1 span::before{
   border: 20px #0f0f0f;
   border-radius: 20px;
   max-width: 40%;
-  
 }
 
 .mouse-cursor-gradient-tracking span {
@@ -82,4 +86,103 @@ h1 span::before{
 
 .mouse-cursor-gradient-tracking:hover::before {
   --size: 200px;
+}
+
+.btn-6 {
+  background: rgb(247,150,192);
+background: radial-gradient(circle, rgba(247,150,192,1) 0%, rgba(118,174,241,1) 100%);
+  line-height: 42px;
+  padding: 0;
+  border: none;
+}
+.btn-6 span {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.btn-6:before,
+.btn-6:after {
+  position: absolute;
+  content: "";
+  height: 0%;
+  width: 1px;
+ box-shadow:
+   -1px -1px 20px 0px rgba(255,255,255,1),
+   -4px -4px 5px 0px rgba(255,255,255,1),
+   7px 7px 20px 0px rgba(0,0,0,.4),
+   4px 4px 5px 0px rgba(0,0,0,.3);
+}
+.btn-6:before {
+  right: 0;
+  top: 0;
+  transition: all 500ms ease;
+}
+.btn-6:after {
+  left: 0;
+  bottom: 0;
+  transition: all 500ms ease;
+}
+.btn-6:hover{
+  background: transparent;
+  color: #76aef1;
+  box-shadow: none;
+}
+.btn-6:hover:before {
+  transition: all 500ms ease;
+  height: 100%;
+}
+.btn-6:hover:after {
+  transition: all 500ms ease;
+  height: 100%;
+}
+.btn-6 span:before,
+.btn-6 span:after {
+  position: absolute;
+  content: "";
+  box-shadow:
+   -1px -1px 20px 0px rgba(255,255,255,1),
+   -4px -4px 5px 0px rgba(255,255,255,1),
+   7px 7px 20px 0px rgba(0,0,0,.4),
+   4px 4px 5px 0px rgba(0,0,0,.3);
+}
+.btn-6 span:before {
+  left: 0;
+  top: 0;
+  width: 0%;
+  height: .5px;
+  transition: all 500ms ease;
+}
+.btn-6 span:after {
+  right: 0;
+  bottom: 0;
+  width: 0%;
+  height: .5px;
+  transition: all 500ms ease;
+}
+.btn-6 span:hover:before {
+  width: 100%;
+}
+.btn-6 span:hover:after {
+  width: 100%;
+}
+
+
+.custom-btn {
+  width: 50vw;
+  height: 50%;
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px 25px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+   box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+   7px 7px 20px 0px rgba(0,0,0,.1),
+   4px 4px 5px 0px rgba(0,0,0,.1);
+  outline: none;
 }

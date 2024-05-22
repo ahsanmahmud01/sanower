@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -6,30 +7,83 @@
   <link rel="stylesheet" href="math.css">
 </head>
 <body>
-  <h1> <span></span></h1>
+  <h1>What is math</h1>
+  <div class="quote-container">
+    <h1 class="quote-head">
+      <span id="quote"></span>
+      <br>
+      <span id="author"></span>
+    </h1>
+  </div>
 
-  <h1>Math</h1>
-
-  <H2>FIRST PAPER</H2>
-  <button onclick="window.location.href='link'" class="custom-btn btn-B"><span>
-    <h3>Chapter 02</h3> Vectors
-  </span></button>
+  <br><br>
+  <h1>HSC</h1>
+  <h2>PAPER</h2>
+  <button class="custom-btn btn-6 " onclick="window.location.href='link'"><span><h3>Chapter 02</h3> Vectors</span></button>
   
-  <h2>SECOUND PAPER</h2>
-  <button onclick="window.location.href='Thermodynamics-2.pdf'" class="custom-btn btn-B"><span>
-    <h3>Chapter 01</h3>Thermodynamics 
-  </span></button>
-
-  </span></button>
+  <h2>PAPER</h2>
+  <button class="custom-btn btn-6" onclick="window.location.href='Thermodynamics-2.pdf'"><span><h3>Chapter 01</h3> Thermodynamics</span></button>
 
   <script>
-    var btn = document.querySelector('.mouse-cursor-gradient-tracking')
-btn.onmousemove = function(e) {
-  var x = e.pageX - btn.offsetLeft - btn.offsetParent.offsetLeft
-  var y = e.pageY - btn.offsetTop - btn.offsetParent.offsetTop
-  btn.style.setProperty('--x', x + 'px')
-  btn.style.setProperty('--y', y + 'px')
-}
-</script>
+    const quotes = [
+      { quote: "Without the knowledge of uncertainty, any kind of measurement is meaningless.", author: "Walter Lewin" },
+      { quote: "Pure mathematics is, in its way, the poetry of logical ideas.", author: "Albert Einstein" },
+      { quote: "The only way to learn mathematics is to do mathematics.", author: "Paul Halmos" },
+      { quote: "Mathematics is the most beautiful and most powerful creation of the human spirit.", author: "Stefan Banach" },
+      { quote: "In mathematics, the art of proposing a question must be held of higher value than solving it.", author: "Georg Cantor" },
+      { quote: "Mathematics knows no races or geographic boundaries; for mathematics, the cultural world is one country.", author: "David Hilbert" },
+      { quote: "The essence of mathematics is not to make simple things complicated, but to make complicated things simple.", author: "Stan Gudder" },
+      { quote: "Go down deep enough into anything and you will find mathematics.", author: "Dean Schlicter" },
+      { quote: "Mathematics is the music of reason.", author: "James Joseph Sylvester" },
+      { quote: "Mathematics is a language.", author: "Josiah Willard Gibbs" },
+      { quote: "Without the knowledge of uncertainty, any kind of measurement is meaningless.", author: "Walter Lewin" },
+      { quote: "Mathematics is the queen of the sciences.", author: "Carl Friedrich Gauss" },
+      { quote: "What is mathematics? It is only a systematic effort of solving puzzles posed by nature.", author: "Shakuntala Devi" },
+      { quote: "Do not worry too much about your difficulties in mathematics, I can assure you mine are still greater.", author: "Albert Einstein" },
+      { quote: "Mathematics is not about numbers, equations, computations, or algorithms: it is about understanding.", author: "William Paul Thurston" },
+      { quote: "Math is not just solving for x, it’s also figuring out why.", author: "Anonymous" },
+      { quote: "Learning to see patterns in math is like learning to see patterns in art.", author: "Grant Sanderson" },
+      { quote: "Mathematics is the process of taking a tangled mess and untangling it into something simple and beautiful.", author: "Grant Sanderson" },
+      { quote: "To those who ask what use is math: it builds the intellect, improves logical reasoning, and unveils the beauty of the universe.", author: "Grant Sanderson" },
+      { quote: "There is a certain pleasure in seeing how a small set of principles can explain all the chaos of the world.", author: "Grant Sanderson" },
+      { quote: "Math is fun because it allows you to explore and understand things in ways that no other discipline can.", author: "Grant Sanderson" },
+      { quote: "The study of mathematics, like the Nile, begins in minuteness but ends in magnificence.", author: "Charles Caleb Colton" },
+      { quote: "Mathematics is the door and key to the sciences.", author: "Roger Bacon" },
+      { quote: "Without the knowledge of uncertainty, any kind of measurement is meaningless.", author: "Walter Lewin" },
+      { quote: "The universe cannot be read until we have learned the language and become familiar with the characters in which it is written. It is written in mathematical language.", author: "Galileo Galilei" },
+      { quote: "Mathematics is the most beautiful and most powerful creation of the human spirit.", author: "Stefan Banach" },
+      { quote: "As far as the laws of mathematics refer to reality, they are not certain; and as far as they are certain, they do not refer to reality.", author: "Albert Einstein" },
+      { quote: "Philosophy is written in this grand book, the universe, which stands continually open to our gaze, but it cannot be understood unless one first learns to comprehend the language and interpret the characters in which it is written. It is written in the language of mathematics, and its characters are triangles, circles, and other geometric figures, without which it is humanly impossible to understand a single word of it; without these, one is wandering about in a dark labyrinth.", author: "Galileo Galilei" },
+      { quote: "The laws of nature are but the mathematical thoughts of God.", author: "Euclid" },
+      { quote: "Mathematics is the language in which God has written the universe.", author: "Galileo Galilei" },
+      { quote: "Mathematics is the study of patterns. Finding the germs of reality hidden within these patterns is the essence of mathematical discovery.", author: "Anonymous" },
+      { quote: "Numbers are the highest degree of knowledge. It is knowledge itself.", author: "Plato" },
+      { quote: "Mathematics reveals its secrets only to those who approach it with pure love, for its own beauty.", author: "Archimedes" },
+      { quote: "In mathematics, you don't understand things. You just get used to them.", author: "John von Neumann" },
+      { quote: "Mathematics is the study of patterns. Finding the germs of reality hidden within these patterns is the essence of mathematical discovery.", author: "Anonymous" }
+    ];
+
+    const quoteElement = document.getElementById('quote');
+    const authorElement = document.getElementById('author');
+
+    function getRandomQuote() {
+      return quotes[Math.floor(Math.random() * quotes.length)];
+    }
+
+    function changeQuote() {
+      const randomQuote = getRandomQuote();
+      quoteElement.classList.add('fade-out');
+      authorElement.classList.add('fade-out');
+      setTimeout(() => {
+        quoteElement.textContent = randomQuote.quote;
+        authorElement.textContent = `— ${randomQuote.author}`;
+        quoteElement.classList.remove('fade-out');
+        authorElement.classList.remove('fade-out');
+      }, 1000);
+    }
+
+    setInterval(changeQuote, 8000); // Change quote every 8 seconds
+    changeQuote(); // Initialize with a quote on page load
+  </script>
 </body>
 </html>
