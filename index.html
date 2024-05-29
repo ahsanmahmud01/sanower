@@ -1,55 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PDF of Sanower Sir</title>
-    <link rel="stylesheet" href="index.css">
-    <meta name="description" content="Here you can Find Physics and Math Pdfs by Sanower sir . Most topics mechanics, Dynamics ,Vectors all are here for free download.">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Physics</title>
+  <link rel="stylesheet" href="physics.css">
+  <style>
+    body {
+      background-color: #011C2D;
+      color: #FFFFFF;
+      font-family: 'Helvetica', sans-serif;
+    }
+  </style>
 </head>
+
 <body>
-<div class="main-text">
-    <div>
-        <h1> <span></span></h1>
-      </div>    <h2>I'm Shanower Hossain Rakib</h2>
-    <h3>Here you can get all the lectures of me </h3>
+  <div class="physics label">
+    <h1>Physics</h1>
+  </div>
 
-</div>
-<div class="front-io">
-    
-<button onclick="window.location.href='templates/physics.html'" class="mouse-cursor-gradient-tracking"><span>
-    <h3>Physics</h3>
-    Physics related PDF are here
-</span></button>
+  <div id="container">
+    <canvas id="drawing_canvas"></canvas>
+  </div>
 
-<button onclick="window.location.href='math.html'" class="mouse-cursor-gradient-tracking"><span>
-    <h3>Math</h3>
-    Math related PDF are here
-</span>
-</button>
+  <h2>First Paper</h2>
+  <nav class="button-container">
+    <button onclick="window.location.href='link'" class="custom-btn btn-B">
+      <span><h3>Chapter 02</h3>Vectors</span>
+    </button>
+    <button onclick="window.location.href='Dynamics.pdf'" class="custom-btn btn-B">
+      <span><h3>Chapter 03</h3>DYNAMICS</span>
+    </button>
+    <button onclick="window.location.href='chp04.pdf'" class="custom-btn btn-B">
+      <span><h3>Chapter 04</h3>NEWTONIAN MECHANICS</span>
+    </button>
+    <button onclick="window.location.href='chp-05.pdf'" class="custom-btn btn-B">
+      <span><h3>Chapter 05</h3>Work, Power & Energy</span>
+    </button>
+    <button onclick="window.location.href='chp07.pdf'" class="custom-btn btn-B">
+      <span><h3>Chapter 07</h3>Structural Properties of Matter</span>
+    </button>
+    <button onclick="window.location.href='chp08.pdf'" class="custom-btn btn-B">
+      <span><h3>Chapter 08</h3>Simple Harmonic Motion<br>Periodic Motion</span>
+    </button>
+    <button onclick="window.location.href='chp10.pdf'" class="custom-btn btn-B">
+      <span><h3>Chapter 10</h3>Ideal Gas and Kinetics of Gas</span>
+    </button>
+  </nav>
 
+  <h2>Second Paper</h2>
+  <nav class="button-container">
+    <button onclick="window.location.href='Thermodynamics-2.pdf'" class="custom-btn btn-B">
+      <span><h3>Chapter 01</h3>Thermodynamics</span>
+    </button>
+    <button onclick="window.location.href='p2chp2.pdf'" class="custom-btn btn-B">
+      <span><h3>Chapter 02</h3>Static Electricity</span>
+    </button>
+    <button onclick="window.location.href='Current-Electricity.pdf'" class="custom-btn btn-B">
+      <span><h3>Chapter 03</h3>Current Electricity</span>
+    </button>
+    <button onclick="window.location.href='Physical-Optics.pdf'" class="custom-btn btn-B">
+      <span><h3>Chapter 07</h3>Physical Optics</span>
+    </button>
+    <button onclick="window.location.href='p2Chp-10.pdf'" class="custom-btn btn-B">
+      <span><h3>Chapter 10</h3>Semiconductor & Electronics</span>
+    </button>
+  </nav>
 
-
-<script>
-    var btn = document.querySelector('.mouse-cursor-gradient-tracking')
-btn.onmousemove = function(e) {
-  var x = e.pageX - btn.offsetLeft - btn.offsetParent.offsetLeft
-  var y = e.pageY - btn.offsetTop - btn.offsetParent.offsetTop
-  btn.style.setProperty('--x', x + 'px')
-  btn.style.setProperty('--y', y + 'px')
-}
-</script>
-</div>
-<h3>The page is maintained By Eng. MD Shanower Hossain Rakib</h3>
- <br>
-The following Notes are not for commertial use. Any commertial Usage Without permission is not appreciated.
-<br> <br> 
-<h5>The page was developed by Ahsan Mahmud</h5>
-<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "5f169e5ba40b436d9ab1674145d7c950"}'></script><!-- End Cloudflare Web Analytics -->
-<footer>
+  <footer>
     <div class="container">
       <p>&copy; Ahsan Mahmud.&copy;Sanower Hossain Rakib. All rights reserved.</p>
     </div>
   </footer>
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/p2.js/0.6.0/p2.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/dat-gui/0.5/dat.gui.min.js"></script>
+  <script src="physics.js"></script>
 </body>
 </html>
