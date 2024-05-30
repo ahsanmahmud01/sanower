@@ -10,14 +10,6 @@ body {
   display: block;
 }
 
-canvas {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 98vw;
-  height: 100%;
-}
-
 .label {
   font-size: 1.25em;
   font-family: monospace;
