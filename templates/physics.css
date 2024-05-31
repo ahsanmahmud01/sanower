@@ -101,3 +101,8 @@ body {
   font-size: 1.2em;
   font-family: 'Helvetica', sans-serif;
 }
+h2{
+  text-align: center;
+  color: color-mix(in srgb, rgb(245, 0, 0) 40%, rgb(175, 175, 214) 80%);
+
+}
