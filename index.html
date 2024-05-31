@@ -5,46 +5,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PDF of Sanower Sir</title>
     <link rel="stylesheet" href="index.css">
-    <meta name="description" content="Here you can Find Physics and Math Pdfs by Sanower sir . Most topics mechanics, Dynamics ,Vectors all are here for free download.">
+    <meta name="description" content="Here you can find Physics and Math PDFs by Sanower sir. Most topics mechanics, dynamics, vectors are all here for free download.">
 </head>
 <body>
 <div class="main-text">
     <div>
         <h1> <span></span></h1>
-      </div>    <h2>I'm Shanower Hossain Rakib</h2>
-    <h3>Here you can get all the lectures of me </h3>
+    </div>
+    <h2>I'm Shanower Hossain Rakib</h2>
+    <h3>Here you can get all the lectures of me</h3>
 </div>
 <div class="front-io">
-    
-<button onclick="window.location.href='templates/physics.html'" class="mouse-cursor-gradient-tracking"><span>
-    <h3>Physics</h3>
-    Physics related PDF are here
-</span></button>
-<button onclick="window.location.href='math.html'" class="mouse-cursor-gradient-tracking"><span>
-    <h3>Math</h3>
-    Math related PDF are here
-</span>
-</button>
-<script>
-    var btn = document.querySelector('.mouse-cursor-gradient-tracking')
-btn.onmousemove = function(e) {
-  var x = e.pageX - btn.offsetLeft - btn.offsetParent.offsetLeft
-  var y = e.pageY - btn.offsetTop - btn.offsetParent.offsetTop
-  btn.style.setProperty('--x', x + 'px')
-  btn.style.setProperty('--y', y + 'px')
-}
-</script>
+    <button onclick="window.location.href='templates/physics.html'" class="mouse-cursor-gradient-tracking"><span>
+        <h3>Physics</h3>
+        Physics related PDFs are here
+    </span></button>
+    <button onclick="window.location.href='math.html'" class="mouse-cursor-gradient-tracking"><span>
+        <h3>Math</h3>
+        Math related PDFs are here
+    </span></button>
 </div>
 <h3>The page is maintained By Eng. MD Shanower Hossain Rakib</h3>
- <br>
-The following Notes are not for commertial use. Any commertial Usage Without permission is not appreciated.
-<br> <br> 
+<br>
+The following notes are not for commercial use. Any commercial usage without permission is not appreciated.
+<br><br>
 <h5>The page was developed by Ahsan Mahmud</h5>
-<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "5f169e5ba40b436d9ab1674145d7c950"}'></script><!-- End Cloudflare Web Analytics -->
+<!-- Cloudflare Web Analytics -->
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "5f169e5ba40b436d9ab1674145d7c950"}'></script>
+<!-- End Cloudflare Web Analytics -->
 <footer>
     <div class="container">
-      <p>&copy; Ahsan Mahmud.&copy;Sanower Hossain Rakib. All rights reserved.</p>
+      <p>&copy; Ahsan Mahmud. &copy; Sanower Hossain Rakib. All rights reserved.</p>
     </div>
-  </footer>
+</footer>
+<script>
+    document.querySelectorAll('.mouse-cursor-gradient-tracking').forEach(btn => {
+        btn.onmousemove = function(e) {
+            var rect = btn.getBoundingClientRect();
+            var x = e.clientX - rect.left;
+            var y = e.clientY - rect.top;
+            btn.style.setProperty('--x', x + 'px');
+            btn.style.setProperty('--y', y + 'px');
+        };
+    });
+</script>
 </body>
 </html>
+

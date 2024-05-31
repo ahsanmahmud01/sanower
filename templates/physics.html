@@ -1,85 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>3D Triple Pendulum</title>
-  <link rel="stylesheet" href="physics.css">
-  <style>
-    body {
-      background-color: #011C2D;
-      color: #FFFFFF;
-      font-family: 'Helvetica', sans-serif;
-    }
-  </style>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Triple Pendulum</title>
+    <link rel="stylesheet" href="physics.css">
 </head>
-
 <body>
-  <div class="physics label">
-    <h1>Physics</h1>
-  </div>
-
-  <div id="container">
-    <canvas id="drawing_canvas"></canvas>
-  </div>
-
-  <h2>First Paper</h2>
-  <nav class="button-container">
-    <button onclick="window.location.href='link'" class="custom-btn btn-B">
-      <span><h3>Chapter 02</h3>Vectors</span>
-    </button>
-    <button onclick="window.location.href='Dynamics.pdf'" class="custom-btn btn-B">
-      <span><h3>Chapter 03</h3>DYNAMICS</span>
-    </button>
-    <button onclick="window.location.href='chp04.pdf'" class="custom-btn btn-B">
-      <span><h3>Chapter 04</h3>NEWTONIAN MECHANICS</span>
-    </button>
-    <button onclick="window.location.href='chp-05.pdf'" class="custom-btn btn-B">
-      <span><h3>Chapter 05</h3>Work, Power & Energy</span>
-    </button>
-    <button onclick="window.location.href='chp07.pdf'" class="custom-btn btn-B">
-      <span><h3>Chapter 07</h3>Structural Properties of Matter</span>
-    </button>
-    <button onclick="window.location.href='chp08.pdf'" class="custom-btn btn-B">
-      <span><h3>Chapter 08</h3>Simple Harmonic Motion<br>Periodic Motion</span>
-    </button>
-    <button onclick="window.location.href='chp10.pdf'" class="custom-btn btn-B">
-      <span><h3>Chapter 10</h3>Ideal Gas and Kinetics of Gas</span>
-    </button>
-  </nav>
-
-  <h2>Second Paper</h2>
-  <nav class="button-container">
-    <button onclick="window.location.href='Thermodynamics-2.pdf'" class="custom-btn btn-B">
-      <span><h3>Chapter 01</h3>Thermodynamics</span>
-    </button>
-    <button onclick="window.location.href='p2chp2.pdf'" class="custom-btn btn-B">
-      <span><h3>Chapter 02</h3>Static Electricity</span>
-    </button>
-    <button onclick="window.location.href='Current-Electricity.pdf'" class="custom-btn btn-B">
-      <span><h3>Chapter 03</h3>Current Electricity</span>
-    </button>
-    <button onclick="window.location.href='Physical-Optics.pdf'" class="custom-btn btn-B">
-      <span><h3>Chapter 07</h3>Physical Optics</span>
-    </button>
-    <button onclick="window.location.href='p2Chp-10.pdf'" class="custom-btn btn-B">
-      <span><h3>Chapter 10</h3>Semiconductor & Electronics</span>
-    </button>
-  </nav>
-
-  <div id="controls" class="controls">
-    <h2>Animation Controls</h2>
-    <div id="gui-container"></div>
-  </div>
-
-  <footer>
-    <div class="container">
-      <p>&copy; Ahsan Mahmud.&copy;Sanower Hossain Rakib. All rights reserved.</p>
-    </div>
-  </footer>
-
-  <script src="//cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.6/dat.gui.min.js"></script>
-  <script src="physics.js"></script>
+    <header class="header">
+        <h1>Physics</h1>
+    </header>
+    <main>
+        <section id="canvas-container">
+            <canvas id="drawing_canvas"></canvas>
+        </section>
+        <section class="chapter-section">
+            <h2>First Paper</h2>
+            <nav class="button-container">
+                <button onclick="window.location.href='link'" class="custom-btn btn-B">
+                    <span><h3>Chapter 02</h3>Vectors</span>
+                </button>
+                <button onclick="window.location.href='Dynamics.pdf'" class="custom-btn btn-B">
+                    <span><h3>Chapter 03</h3>DYNAMICS</span>
+                </button>
+                <button onclick="window.location.href='chp04.pdf'" class="custom-btn btn-B">
+                    <span><h3>Chapter 04</h3>NEWTONIAN MECHANICS</span>
+                </button>
+                <button onclick="window.location.href='chp-05.pdf'" class="custom-btn btn-B">
+                    <span><h3>Chapter 05</h3>Work, Power & Energy</span>
+                </button>
+                <button onclick="window.location.href='chp07.pdf'" class="custom-btn btn-B">
+                    <span><h3>Chapter 07</h3>Structural Properties of Matter</span>
+                </button>
+                <button onclick="window.location.href='chp08.pdf'" class="custom-btn btn-B">
+                    <span><h3>Chapter 08</h3>Simple Harmonic Motion<br>Periodic Motion</span>
+                </button>
+                <button onclick="window.location.href='chp10.pdf'" class="custom-btn btn-B">
+                    <span><h3>Chapter 10</h3>Ideal Gas and Kinetics of Gas</span>
+                </button>
+            </nav>
+            <h2>Second Paper</h2>
+            <nav class="button-container">
+                <button onclick="window.location.href='Thermodynamics-2.pdf'" class="custom-btn btn-B">
+                    <span><h3>Chapter 01</h3>Thermodynamics</span>
+                </button>
+                <button onclick="window.location.href='p2chp2.pdf'" class="custom-btn btn-B">
+                    <span><h3>Chapter 02</h3>Static Electricity</span>
+                </button>
+                <button onclick="window.location.href='Current-Electricity.pdf'" class="custom-btn btn-B">
+                    <span><h3>Chapter 03</h3>Current Electricity</span>
+                </button>
+                <button onclick="window.location.href='Physical-Optics.pdf'" class="custom-btn btn-B">
+                    <span><h3>Chapter 07</h3>Physical Optics</span>
+                </button>
+                <button onclick="window.location.href='p2Chp-10.pdf'" class="custom-btn btn-B">
+                    <span><h3>Chapter 10</h3>Semiconductor & Electronics</span>
+                </button>
+            </nav>
+        </section>
+        <section id="controls" class="controls">
+            <h2>Animation Controls</h2>
+            <div id="gui-container"></div>
+        </section>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; Ahsan Mahmud. &copy; Sanower Hossain Rakib. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.6/dat.gui.min.js"></script>
+    <script src="physics.js"></script>
 </body>
 </html>
