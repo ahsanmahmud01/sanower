@@ -23,9 +23,6 @@ var ballRadius2 = 15; // Radius of pendulum 2 ball in pixels
 var trail1 = [], trail2 = [];
 
 var stoppedThreshold = 0.001; // Threshold for determining if the pendulum has stopped
-var blowOutThreshold = 100; // Threshold for determining if the pendulum has blown out
-
-var resetTimeout = null; // Variable to hold the timeout function for resetting the pendulum
 
 // Conversion functions
 function toRadians(degrees) {
@@ -33,7 +30,7 @@ function toRadians(degrees) {
 }
 
 function toDegrees(radians) {
-    return radians * (180 / Math.PI);
+    return radians * (180 / 180);
 }
 
 function updatePhysics() {
@@ -60,8 +57,8 @@ function updatePhysics() {
     angle1 += angle1Velocity * timeStep * timeScale;
     angle2 += angle2Velocity * timeStep * timeScale;
 
-    trail1.push({ x: length1 * Math.sin(angle1) * 100 + width / 2, y: length1 * Math.cos(angle1) * 100 + height / 4 });
-    trail2.push({ x: length1 * Math.sin(angle1) * 100 + length2 * Math.sin(angle2) * 100 + width / 2, y: length1 * Math.cos(angle1) * 100 + length2 * Math.cos(angle2) * 100 + height / 4 });
+    trail1.push({ x: length1 * Math.sin(angle1) * 100 + width / 2, y: length1 * Math.cos(angle1) * 100 + height / 3 });
+    trail2.push({ x: length1 * Math.sin(angle1) * 100 + length2 * Math.sin(angle2) * 100 + width / 2, y: length1 * Math.cos(angle1) * 100 + length2 * Math.cos(angle2) * 100 + height / 3 });
 
     if (trail1.length > 300) trail1.shift();
     if (trail2.length > 300) trail2.shift();
@@ -70,28 +67,18 @@ function updatePhysics() {
     if (Math.abs(angle1Velocity) < stoppedThreshold && Math.abs(angle2Velocity) < stoppedThreshold) {
         randomizePendulum();
     }
-
-    // Check if the pendulum has blown out
-    if (Math.abs(angle1Velocity) > blowOutThreshold || Math.abs(angle2Velocity) > blowOutThreshold) {
-        if (!resetTimeout) {
-            resetTimeout = setTimeout(randomizePendulum, 5000);
-        }
-    } else if (resetTimeout) {
-        clearTimeout(resetTimeout);
-        resetTimeout = null;
-    }
 }
 
 function draw() {
     ctx.clearRect(0, 0, width, height);
 
     var x1 = length1 * Math.sin(angle1) * 100 + width / 2;
-    var y1 = length1 * Math.cos(angle1) * 100 + height / 4;
+    var y1 = length1 * Math.cos(angle1) * 100 + height / 3;
     var x2 = x1 + length2 * Math.sin(angle2) * 100;
     var y2 = y1 + length2 * Math.cos(angle2) * 100;
 
     ctx.beginPath();
-    ctx.moveTo(width / 2, height / 4);
+    ctx.moveTo(width / 2, height / 3);
     ctx.lineTo(x1, y1);
     ctx.lineTo(x2, y2);
     ctx.strokeStyle = "#fff";
@@ -135,27 +122,16 @@ function draw() {
 function displayForces() {
     var torque1 = length1 * mass1 * g * Math.sin(angle1);
     var torque2 = length2 * mass2 * g * Math.sin(angle2);
-    var linearVelocity1 = length1 * angle1Velocity;
-    var linearVelocity2 = length2 * angle2Velocity;
-    var momentum1 = mass1 * linearVelocity1;
-    var momentum2 = mass2 * linearVelocity2;
-    var angularMomentum1 = mass1 * length1 * length1 * angle1Velocity;
-    var angularMomentum2 = mass2 * length2 * length2 * angle2Velocity;
 
-    var infoLeft = [
+    var info = [
         `Torque on Pendulum 1: ${torque1.toFixed(2)} Nm`,
         `Torque on Pendulum 2: ${torque2.toFixed(2)} Nm`,
         `Angle 1: ${toDegrees(angle1).toFixed(2)}°`,
         `Angle 2: ${toDegrees(angle2).toFixed(2)}°`,
-    ];
-
-    var infoRight = [
-        `Velocity 1: ${linearVelocity1.toFixed(2)} m/s`,
-        `Velocity 2: ${linearVelocity2.toFixed(2)} m/s`,
-        `Momentum 1: ${momentum1.toFixed(2)} kg·m/s`,
-        `Momentum 2: ${momentum2.toFixed(2)} kg·m/s`,
-        `Angular Momentum 1: ${angularMomentum1.toFixed(2)} kg·m²/s`,
-        `Angular Momentum 2: ${angularMomentum2.toFixed(2)} kg·m²/s`,
+        `Velocity 1: ${angle1Velocity.toFixed(2)} rad/s`,
+        `Velocity 2: ${angle2Velocity.toFixed(2)} rad/s`,
+        `Mass 1: ${mass1.toFixed(2)} kg`,
+        `Mass 2: ${mass2.toFixed(2)} kg`,
     ];
 
     ctx.font = '16px "Lucida Console", Monaco, monospace';
@@ -166,13 +142,8 @@ function displayForces() {
     ctx.shadowColor = 'cyan';
     ctx.shadowBlur = 5;
 
-    infoLeft.forEach((text, index) => {
-        ctx.fillText(text, 20, height - (infoLeft.length - index) * 20 - 40);
-    });
-
-    ctx.textAlign = 'right';
-    infoRight.forEach((text, index) => {
-        ctx.fillText(text, width - 20, height - (infoRight.length - index) * 20 - 40);
+    info.forEach((text, index) => {
+        ctx.fillText(text, 20, height - (info.length - index) * 20 - 20);
     });
 
     ctx.restore();
@@ -181,29 +152,80 @@ function displayForces() {
 function randomizePendulum() {
     length1 = Math.random() * 2.5 + 0.5;
     length2 = Math.random() * 2.5 + 0.5;
-    mass1 = Math.random() * 50 + 1;
-    mass2 = Math.random() * 50 + 1;
-    angle1 = toRadians(Math.random() * 360);
-    angle2 = toRadians(Math.random() * 360);
-    angle1Velocity = 0;
-    angle2Velocity = 0;
-    angle1Acceleration = 0;
-    angle2Acceleration = 0;
+    mass1 = Math.random() * 99.9 + 0.1;
+    mass2 = Math.random() * 99.9 + 0.1;
+    angle1 = Math.random() * Math.PI;
+    angle2 = Math.random() * Math.PI;
+    angle1Velocity = Math.random() * 2 - 1;
+    angle2Velocity = Math.random() * 2 - 1;
     ballRadius1 = Math.random() * 45 + 5;
     ballRadius2 = Math.random() * 45 + 5;
     trail1 = [];
     trail2 = [];
-
-    if (resetTimeout) {
-        clearTimeout(resetTimeout);
-        resetTimeout = null;
-    }
 }
 
-function animate() {
+function loop() {
     updatePhysics();
     draw();
-    requestAnimationFrame(animate);
+    requestAnimationFrame(loop);
 }
 
-animate();
+window.addEventListener('resize', () => {
+    width = canvas.width = window.innerWidth;
+    height = canvas.height = window.innerHeight;
+});
+
+loop();
+
+// Animation control settings
+var animationControls = {
+    angle1: toDegrees(angle1),
+    angle2: toDegrees(angle2),
+    angle1Velocity: angle1Velocity,
+    angle2Velocity: angle2Velocity,
+    mass1: mass1,
+    mass2: mass2,
+    length1: length1,
+    length2: length2,
+    ballRadius1: ballRadius1,
+    ballRadius2: ballRadius2,
+    g: g,
+    airFriction: airFriction,
+    timeScale: timeScale,
+    reset: function() {
+        angle1 = toRadians(animationControls.angle1);
+        angle2 = toRadians(animationControls.angle2);
+        angle1Velocity = animationControls.angle1Velocity;
+        angle2Velocity = animationControls.angle2Velocity;
+        mass1 = animationControls.mass1;
+        mass2 = animationControls.mass2;
+        length1 = animationControls.length1;
+        length2 = animationControls.length2;
+        ballRadius1 = animationControls.ballRadius1;
+        ballRadius2 = animationControls.ballRadius2;
+        g = animationControls.g;
+        airFriction = animationControls.airFriction;
+        timeScale = animationControls.timeScale;
+    }
+};
+
+window.onload = function() {
+    var gui = new dat.GUI({ autoPlace: false });
+    gui.add(animationControls, 'angle1', 0, 360).name('Angle 1 (deg)').listen();
+    gui.add(animationControls, 'angle2', 0, 360).name('Angle 2 (deg)').listen();
+    gui.add(animationControls, 'angle1Velocity', -10, 10).name('Angle 1 Velocity').listen();
+    gui.add(animationControls, 'angle2Velocity', -10, 10).name('Angle 2 Velocity').listen();
+    gui.add(animationControls, 'mass1', 0.1, 100).name('Mass 1 (kg)').listen();
+    gui.add(animationControls, 'mass2', 0.1, 100).name('Mass 2 (kg)').listen();
+    gui.add(animationControls, 'length1', 0.5, 3).name('Length 1 (m)').listen();
+    gui.add(animationControls, 'length2', 0.5, 3).name('Length 2 (m)').listen();
+    gui.add(animationControls, 'ballRadius1', 5, 50).name('Ball 1 Radius').listen();
+    gui.add(animationControls, 'ballRadius2', 5, 50).name('Ball 2 Radius').listen();
+    gui.add(animationControls, 'g', 0.1, 20).name('Gravity (m/s²)').listen();
+    gui.add(animationControls, 'airFriction', 0, 1).name('Air Friction').listen();
+    gui.add(animationControls, 'timeScale', 0.1, 3).name('Time Scale').listen();
+    gui.add(animationControls, 'reset').name('Reset');
+
+    document.getElementById('gui-container').appendChild(gui.domElement);
+    gui.close();
+};
