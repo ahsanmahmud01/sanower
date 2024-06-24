@@ -1,6 +1,11 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   background-color: #000;
   margin: 0;
+  font-family: 'Lato', sans-serif;
 }
 
 #container {
@@ -101,8 +106,8 @@ body {
   font-size: 1.2em;
   font-family: 'Helvetica', sans-serif;
 }
-h2{
+
+h2 {
   text-align: center;
   color: color-mix(in srgb, rgb(245, 0, 0) 40%, rgb(175, 175, 214) 80%);
-
 }

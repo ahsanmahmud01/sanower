@@ -1,51 +1,10 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Physics Backend</title>
-    <style>
-        /* Styles */
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
 </head>
 <body>
-  <div class="container">
-    <h1>Physics Backend</h1>
-
-    <h2>FIRST PAPER</h2>
-    <form action="/upload" method="POST" enctype="multipart/form-data">
-      <label for="chapter">Chapter:</label>
-      <input type="text" id="chapter" name="chapter"><br>
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="name"><br>
-      <label for="file">PDF File:</label>
-      <input type="file" id="file" name="file"><br>
-      <input type="submit" value="Upload PDF">
-    </form>
-
-    <h3>Current Buttons</h3>
-    <ul>
-      {% for button in buttons_paper1 %}
-      <li>
-        <form action="/update_button" method="POST">
-          <label for="chapter">Chapter:</label>
-          <input type="text" id="chapter" name="chapter" value="{{ button.chapter }}"><br>
-          <label for="name">Name:</label>
-          <input type="text" id="name" name="name" value="{{ button.name }}"><br>
-          <label for="file">File:</label>
-          <input type="text" id="file" name="file" value="{{ button.file }}"><br>
-          <input type="submit" value="Update">
-        </form>
-        <form action="/remove_button" method="POST">
-          <input type="hidden" id="chapter" name="chapter" value="{{ button.chapter }}">
-          <input type="submit" value="Remove">
-        </form>
-      </li>
-      {% endfor %}
-    </ul>
-
-    <!-- SECOND PAPER buttons... -->
-
-  </div>
+    
 </body>
 </html>

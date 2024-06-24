@@ -1,7 +1,7 @@
 var canvas = document.getElementById("drawing_canvas");
 var ctx = canvas.getContext("2d");
 
-var width = canvas.width = window.innerWidth;
+var width = canvas.width = window.innerWidth/2;
 var height = canvas.height = window.innerHeight;
 
 var g = 9.8; // Gravity in m/s^2
@@ -338,7 +338,7 @@ function draw() {
         ctx.stroke();
     }
 
-    // Display forces and torque with a sci-fi look
+    // Display 
     displayForces();
 }
 
@@ -357,9 +357,6 @@ function displayForces() {
         `Torque on Pendulum 2: ${torque2.toFixed(2)} Nm`,
         `Angle 1: ${toDegrees(angle1).toFixed(2)}°`,
         `Angle 2: ${toDegrees(angle2).toFixed(2)}°`,
-    ];
-
-    var infoRight = [
         `Velocity 1: ${linearVelocity1.toFixed(2)} m/s`,
         `Velocity 2: ${linearVelocity2.toFixed(2)} m/s`,
         `Momentum 1: ${momentum1.toFixed(2)} kg·m/s`,
@@ -368,7 +365,9 @@ function displayForces() {
         `Angular Momentum 2: ${angularMomentum2.toFixed(2)} kg·m²/s`,
     ];
 
-    ctx.font = '16px "Lucida Console", Monaco, monospace';
+    
+
+    ctx.font = '12px "Lucida Console", Monaco, monospace';
     ctx.fillStyle = 'lime';
     ctx.textAlign = 'left';
 
@@ -380,10 +379,6 @@ function displayForces() {
         ctx.fillText(text, 20, height - (infoLeft.length - index) * 20 - 40);
     });
 
-    ctx.textAlign = 'right';
-    infoRight.forEach((text, index) => {
-        ctx.fillText(text, width - 20, height - (infoRight.length - index) * 20 - 40);
-    });
 
     ctx.restore();
 }
@@ -425,16 +420,18 @@ window.onload = function() {
     gui.add(animationControls, 'angle1Velocity', -10, 10).name('Angle 1 Velocity').listen();
     gui.add(animationControls, 'angle2Velocity', -10, 10).name('Angle 2 Velocity').listen();
     gui.add(animationControls, 'mass1', 0.1, 100).name('Mass 1 (kg)').listen();
-    gui.add(animationControls, 'mass2', 0.1, 100).name('Mass 2 (kg)').listen();
+    gui.add(animationControls, 'mass2', 0, 100).name('Mass 2 (kg)').listen();
     gui.add(animationControls, 'length1', 0.5, 3).name('Length 1 (m)').listen();
-    gui.add(animationControls, 'length2', 0.5, 3).name('Length 2 (m)').listen();
+    gui.add(animationControls, 'length2', 0, 5).name('Length 2 (m)').listen();
     gui.add(animationControls, 'ballRadius1', 5, 50).name('Ball 1 Radius').listen();
-    gui.add(animationControls, 'ballRadius2', 5, 50).name('Ball 2 Radius').listen();
-    gui.add(animationControls, 'g', 0.1, 20).name('Gravity (m/s²)').listen();
+    gui.add(animationControls, 'ballRadius2', 0, 50).name('Ball 2 Radius').listen();
+    gui.add(animationControls, 'g', 0.1, 100).name('Gravity (m/s²)').listen();
     gui.add(animationControls, 'airFriction', 0, 1).name('Air Friction').listen();
-    gui.add(animationControls, 'timeScale', 0.1, 3).name('Time Scale').listen();
-    gui.add(animationControls, 'reset').name('Reset');
+    gui.add(animationControls, 'timeScale', 0.01, 10).name('Time Scale').listen();
+    gui.add(animationControls, 'reset').name('Just do It');
 
     document.getElementById('gui-container').appendChild(gui.domElement);
     gui.close();
+    window.addEventListener("resize", onResize);
+
 };
